@@ -1,5 +1,6 @@
 defmodule Physics.Rocketry do
   import Converter
+  import Calcs
   import Physics.Laws
   import Planets
 
@@ -16,6 +17,6 @@ defmodule Physics.Rocketry do
 
   defp calculate_escape(%{mass: mass, radius: radius}) do
     velocity = 2 * newtons_gravitational_constant * mass / radius
-    velocity |> :math.sqrt
+      |> square_root
   end
 end
