@@ -9,7 +9,7 @@ defmodule PhysicsTest do
 
   test "escape velocity of mars is correct" do
     ev = Physics.Rocketry.escape_velocity(:mars)
-    assert ev == 5.1
+    assert ev == 5.0
   end
 
   test "escape velocity of the moon is correct" do
@@ -20,6 +20,11 @@ defmodule PhysicsTest do
   test "escape velocity of planet X is correct" do
     ev = %{mass: 4.0e22, radius: 6.21e6}
       |> Physics.Rocketry.escape_velocity
-    assert ev == 1.0
+    assert ev == 0.9
+  end
+
+  test "Orbital acceleration for earth at 100km" do
+    orbital_arc = Physics.Rocketry.orbital_acceleration(100)
+    assert orbital_arc == 9.515619587729839
   end
 end
