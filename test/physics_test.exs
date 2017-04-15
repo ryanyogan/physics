@@ -1,5 +1,5 @@
 defmodule PhysicsTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   doctest Physics
 
   test "escape velocity of earth is correct" do
